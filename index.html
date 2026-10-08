@@ -101,21 +101,116 @@ margin-top:50px;
 margin-bottom:80px;
 color:#cccccc;
 }
+.section{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 1s ease;
+}
 
+.section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+  
 </style>
 
+  <script>
+
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+},{
+    threshold:0.2
+});
+
+sections.forEach(section=>{
+    observer.observe(section);
+});
+
+  </script>
+
+.stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(white 1px, transparent 1px);
+background-size:50px 50px;
+opacity:0.08;
+pointer-events:none;
+z-index:-1;
+
+animation:moveStars 80s linear infinite;
+}
+
+@keyframes moveStars{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-500px);
+}
+}
+.section.show{
+    background:rgba(255,255,255,0.02);
+    padding:20px;
+    border-radius:12px;
+}
+
+.ending{
+opacity:0;
+animation:endReveal 3s forwards;
+animation-delay:1s;
+}
+
+@keyframes endReveal{
+from{
+opacity:0;
+letter-spacing:10px;
+}
+to{
+opacity:1;
+letter-spacing:1px;
+}
+}
+  
 </head>
 
 <body>
 
 <h1 class="fade">
-For Someone Important
+<h1 id="title"></h1>
+<script>
+
+const text = "The Things I Never Said";
+let i=0;
+
+function typeWriter(){
+    if(i<text.length){
+        document.getElementById("title").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter,100);
+    }
+}
+
+typeWriter();
+
+</script>
+  
 </h1>
 
 <div class="quote">
 
 </div>
-
+<div class="stars"></div>
+  
 <p>
 <p>
 There are things I should have said years ago.
