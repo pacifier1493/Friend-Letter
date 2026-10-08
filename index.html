@@ -1,117 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 
-<title>To Someone Who Matters More Than She Realises
-</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Things I Never Said</title>
 
 <style>
-
-body{
-background:#050505;
-color:#f5f5f5;
-font-family:Georgia, serif;
-margin:auto;
-max-width:850px;
-padding:40px 25px;
-line-height:2;
-font-size:20px;
-}
-
-h1{
-text-align:center;
-margin-top:100px;
-margin-bottom:30px;
-font-weight:300;
-}
-
-.quote{
-text-align:center;
-font-style:italic;
-color:#999;
-margin-bottom:100px;
-}
-
-.section{
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1.2s forwards;
-margin-bottom:70px;
-}
-
-.section:nth-child(1){animation-delay:.1s;}
-.section:nth-child(2){animation-delay:.3s;}
-.section:nth-child(3){animation-delay:.5s;}
-.section:nth-child(4){animation-delay:.7s;}
-.section:nth-child(5){animation-delay:.9s;}
-
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-p{
-margin-bottom:28px;
-}
-
-.ending{
-text-align:center;
-font-size:22px;
-padding-top:40px;
-padding-bottom:100px;
-}
 
 html{
 scroll-behavior:smooth;
 }
 
-::-webkit-scrollbar{
-width:6px;
+body{
+background:#050505;
+color:#f5f5f5;
+font-family:Georgia, serif;
+max-width:850px;
+margin:auto;
+padding:40px 25px;
+line-height:2;
+font-size:20px;
+overflow-x:hidden;
 }
-
-::-webkit-scrollbar-thumb{
-background:#666;
-border-radius:10px;
-}
-
-
-h1{
-text-align:center;
-margin-top:80px;
-font-weight:normal;
-}
-
-.fade{
-opacity:0;
-animation:appear 2s forwards;
-}
-
-@keyframes appear{
-to{
-opacity:1;
-}
-}
-
-.quote{
-font-style:italic;
-text-align:center;
-margin-top:50px;
-margin-bottom:80px;
-color:#cccccc;
-}
-.section{
-    opacity:0;
-    transform:translateY(50px);
-    transition:all 1s ease;
-}
-
-.section.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
 
 .stars{
 position:fixed;
@@ -122,11 +35,10 @@ height:100%;
 background:
 radial-gradient(white 1px, transparent 1px);
 background-size:50px 50px;
-opacity:0.08;
+opacity:0.05;
 pointer-events:none;
 z-index:-1;
-
-animation:moveStars 80s linear infinite;
+animation:moveStars 120s linear infinite;
 }
 
 @keyframes moveStars{
@@ -137,123 +49,138 @@ to{
 transform:translateY(-500px);
 }
 }
+
+.opening{
+text-align:center;
+font-size:22px;
+margin-top:120px;
+margin-bottom:120px;
+opacity:0;
+animation:fadeIn 4s forwards;
+font-style:italic;
+color:#bdbdbd;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+h1{
+text-align:center;
+margin-bottom:50px;
+font-weight:300;
+color:#d4af37;
+min-height:70px;
+}
+
+.quote{
+text-align:center;
+font-style:italic;
+color:#9a9a9a;
+margin-bottom:120px;
+}
+
+.section{
+opacity:0;
+transform:translateY(50px);
+transition:all 1.2s ease;
+margin-bottom:80px;
+}
+
 .section.show{
-    background:rgba(255,255,255,0.02);
-    padding:20px;
-    border-radius:12px;
+opacity:1;
+transform:translateY(0);
+background:rgba(255,255,255,0.02);
+padding:20px;
+border-radius:12px;
+}
+
+p{
+margin-bottom:30px;
 }
 
 .ending{
 opacity:0;
-animation:endReveal 3s forwards;
-animation-delay:1s;
+transform:translateY(40px);
+transition:all 2s ease;
+text-align:center;
+padding-top:80px;
+padding-bottom:100px;
 }
 
-@keyframes endReveal{
-from{
-opacity:0;
-letter-spacing:10px;
-}
-to{
+.ending.show{
 opacity:1;
-letter-spacing:1px;
+transform:translateY(0);
 }
+
+.signature{
+font-style:italic;
+font-size:22px;
+color:#d4af37;
+margin-top:40px;
 }
-  
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#666;
+border-radius:20px;
+}
+
 </style>
 
-  <script>
-
-const sections = document.querySelectorAll('.section');
-
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-},{
-    threshold:0.2
-});
-
-sections.forEach(section=>{
-    observer.observe(section);
-});
-
-
-
-  </script>
-
-  
 </head>
 
 <body>
 
-<h1 class="fade">
+<div class="stars"></div>
+
+<div class="opening">
+If you're reading this, then this was always meant for you.
+</div>
+
 <h1 id="title"></h1>
-<script>
-
-const text = "The Things I Never Said";
-let i=0;
-
-function typeWriter(){
-    if(i<text.length){
-        document.getElementById("title").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter,100);
-    }
-}
-
-typeWriter();
-
-</script>
-  
-</h1>
 
 <div class="quote">
-
+Some things take years to write.
 </div>
-<div class="stars"></div>
-  
-<p>
+
+
+<div class="section">
+
 <p>
 There are things I should have said years ago.
-
 When we reconnected, I never imagined our friendship would become what it is today.
-
-...
-...
-...
 </p>
 
-<body>
-
-<div class="quote fade">
-"If you're reading this, then this was always meant for you."
 </div>
 
-<div class="letter">
 
 <div class="section">
-<p>
 
-</p>
-</div>
-
-<div class="section">
 <p>
 I don't really know what to call this.
 It's not an apology.
 It's not advice.
-And it's certainly not a goodbye.
+And it certainly isn't a goodbye.
 </p>
 
 <p>
-It's just a collection of thoughts that have lived in my mind for years and somehow never found the right words.
+It's just a collection of thoughts that have lived quietly in my mind for years and somehow never found the right words.
 </p>
+
 </div>
 
+
 <div class="section">
+
 <p>
 When I think about us, I still find it strange how life works.
 Back in graduation, we were hardly part of each other's lives.
@@ -267,19 +194,25 @@ I moved cities, built a career, got married, and followed my own path.
 </p>
 
 <p>
-For a long time, our lives barely touched.
+For a long time our lives barely touched.
 And then somehow, years later, the universe decided we should find our way back into each other's lives.
 </p>
+
 </div>
 
+
 <div class="section">
+
 <p>
 What happened after that was something I never expected.
 Because somewhere along the way, you stopped being an old friend and became someone whose victories excited me, whose failures frustrated me, whose tears affected me, and whose happiness genuinely mattered to me.
 </p>
+
 </div>
 
+
 <div class="section">
+
 <p>
 I've seen you dream.
 I've seen you break.
@@ -292,9 +225,12 @@ I've seen you aim unbelievably high and then convince yourself you're not capabl
 And if there is one thing that has consistently frustrated me about you, it is not your failures.
 It's the fact that you still don't see yourself the way I do.
 </p>
+
 </div>
 
+
 <div class="section">
+
 <p>
 You have spent years underestimating yourself.
 Years negotiating against your own potential.
@@ -306,9 +242,12 @@ And honestly, it irritates me.
 Not because I think little of you.
 Because I think so much of you.
 </p>
+
 </div>
 
+
 <div class="section">
+
 <p>
 There were times I snapped.
 Times I lost patience.
@@ -321,76 +260,94 @@ For those moments, I am genuinely sorry.
 
 <p>
 But I also want you to understand where that came from.
-Indifference doesn't get frustrated.
 People don't spend hours arguing with people they don't care about.
+My frustration was never born from judgment.
+It came from believing in you and wanting more for you than you were willing to demand from yourself.
 </p>
+
 </div>
 
+
 <div class="section">
+
 <p>
-Your willingness to be real is one of the things I admire most.
+One of the things I have always admired about you is your willingness to be real.
 Not perfect.
-Not impressive.
+Not polished.
 Just real.
 </p>
 
 <p>
-Over the years, you've shared your dreams, fears, insecurities, frustrations, hopes, disappointments, and pieces of yourself that most people keep hidden.
+Over the years you've shared dreams, fears, insecurities, disappointments, ridiculous ideas, ambitions and pieces of yourself that most people never get to see.
 </p>
 
 <p>
-And I hope you know that I always saw that as trust.
-A rare kind of trust.
+And I hope you know that I never saw that openness as a burden.
+I saw it for what it was.
+Trust.
 </p>
+
 </div>
 
+
 <div class="section">
-<p>
-You never needed to earn the right to be yourself around me.
-You already had it.
-</p>
 
 <p>
-You never had to be strong all the time.
-You never had to pretend.
-You never had to edit yourself.
+You never needed to filter yourself with me.
+You never needed to be the strong version of yourself all the time.
+You never needed to hide uncertainty or fear.
 </p>
 
 <p>
 The ambitious version of you.
 The emotional version of you.
 The confused version of you.
-The fearless version of you.
+The brave version of you.
 All of them were welcome.
 </p>
+
+<p>
+You never had to earn the right to be yourself with me.
+You already had it.
+</p>
+
 </div>
 
+
 <div class="section">
+
 <p>
-If there is anything I want for you, it is this:
+If there is one thing I want for you moving forward, it is this:
 stop looking at yourself through the eyes of people who cannot fully see your value.
 </p>
 
 <p>
-Build a life that makes you proud.
+Build something of your own.
 Build confidence that belongs to you.
-Build happiness that doesn't depend on anyone else's approval.
+Build a life that makes you proud.
+Build happiness that feels genuine when nobody else is watching.
 </p>
+
 </div>
 
+
 <div class="section">
+
 <p>
 And as for us...
-I don't know what label fits our friendship anymore.
-Perhaps none of them do.
+I don't really know what label fits our friendship anymore.
+Maybe none of them do.
 </p>
 
 <p>
 I only know that over the years you became one of those rare people whose presence leaves a permanent mark.
 </p>
+
 </div>
 
+
 <div class="section">
+
 <p>
 You've made me laugh.
 You've annoyed me.
@@ -400,17 +357,20 @@ You've made me proud.
 </p>
 
 <p>
-And through all of it, you've given me the privilege of knowing the person hidden behind the expectations, responsibilities, insecurities, dreams, and doubts.
+And through all of it you've given me the privilege of knowing the person hidden behind expectations, responsibilities, insecurities, dreams and doubts.
 </p>
 
 <p>
 The real you.
 </p>
+
 </div>
 
-<div class="section">
+
+<div class="section ending">
+
 <p>
-So if there is one thing I want you to remember after reading all of this, it is simple.
+So if there is one thing I want you to remember after reading all of this...
 </p>
 
 <p>
@@ -428,26 +388,49 @@ Every year of friendship.
 <p>
 And even on the days when you struggle to believe in yourself, I hope you remember that somewhere in this world there is an idiot who never stopped believing in you.
 </p>
-</div>
 
-<div class="section ending">
 <p>
 Not once.
 </p>
 
-<br>
-
-<p>
-- Your loving friend - Madhu
-</p>
+<div class="signature">
+- Your idiot friend
 </div>
 
 </div>
 
-</body>
-  
-</p>
+<script>
+
+const text = "The Things I Never Said";
+let i = 0;
+
+function typeWriter(){
+    if(i < text.length){
+        document.getElementById("title").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter,90);
+    }
+}
+
+window.onload = typeWriter;
+
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+},{
+    threshold:0.15
+});
+
+sections.forEach(section=>{
+    observer.observe(section);
+});
+
+</script>
 
 </body>
-
 </html>
