@@ -26,6 +26,8 @@ font-size:20px;
 overflow-x:hidden;
 }
 
+/* BACKGROUND STARS */
+
 .stars{
 position:fixed;
 top:0;
@@ -50,6 +52,8 @@ transform:translateY(-500px);
 }
 }
 
+/* OPENING */
+
 .opening{
 text-align:center;
 font-size:22px;
@@ -70,6 +74,8 @@ opacity:1;
 }
 }
 
+/* TITLE */
+
 h1{
 text-align:center;
 margin-bottom:50px;
@@ -84,6 +90,8 @@ font-style:italic;
 color:#9a9a9a;
 margin-bottom:120px;
 }
+
+/* SECTIONS */
 
 .section{
 opacity:0;
@@ -104,12 +112,28 @@ p{
 margin-bottom:30px;
 }
 
+/* FINAL SECTION */
+
+.finalPause{
+
+text-align:center;
+font-size:22px;
+font-style:italic;
+
+color:#999;
+
+margin-top:100px;
+margin-bottom:100px;
+
+opacity:0.5;
+}
+
 .ending{
 opacity:0;
-transform:translateY(40px);
+transform:translateY(60px);
 transition:all 2s ease;
 text-align:center;
-padding-top:80px;
+padding-top:60px;
 padding-bottom:100px;
 }
 
@@ -119,11 +143,42 @@ transform:translateY(0);
 }
 
 .signature{
-font-style:italic;
+margin-top:40px;
 font-size:22px;
 color:#d4af37;
-margin-top:40px;
+font-style:italic;
+min-height:30px;
 }
+
+/* MUSIC BUTTON */
+
+#musicButton{
+
+position:fixed;
+
+bottom:25px;
+right:25px;
+
+width:60px;
+height:60px;
+
+border:none;
+border-radius:50%;
+
+background:#d4af37;
+color:black;
+
+font-size:24px;
+font-weight:bold;
+
+cursor:pointer;
+
+box-shadow:0 0 20px rgba(212,175,55,.4);
+
+z-index:999;
+}
+
+/* SCROLLBAR */
 
 ::-webkit-scrollbar{
 width:8px;
@@ -142,6 +197,12 @@ border-radius:20px;
 
 <div class="stars"></div>
 
+<audio id="bgmusic" loop>
+    music.mp3
+</audio>
+
+<button id="musicButton">♫</button>
+
 <div class="opening">
 If you're reading this, then this was always meant for you.
 </div>
@@ -152,19 +213,14 @@ If you're reading this, then this was always meant for you.
 Some things take years to write.
 </div>
 
-
 <div class="section">
-
 <p>
 There are things I should have said years ago.
 When we reconnected, I never imagined our friendship would become what it is today.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 I don't really know what to call this.
 It's not an apology.
@@ -175,62 +231,47 @@ And it certainly isn't a goodbye.
 <p>
 It's just a collection of thoughts that have lived quietly in my mind for years and somehow never found the right words.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 When I think about us, I still find it strange how life works.
 Back in graduation, we were hardly part of each other's lives.
-We were just two people walking through the same phase, carrying different dreams, different struggles, and heading toward different destinations.
 </p>
 
 <p>
 Then life happened.
-You went through things that would have broken a lot of people.
+You went through things that would have broken many people.
 I moved cities, built a career, got married, and followed my own path.
 </p>
 
 <p>
-For a long time our lives barely touched.
-And then somehow, years later, the universe decided we should find our way back into each other's lives.
+And somehow, years later, we found our way back into each other's lives.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 What happened after that was something I never expected.
-Because somewhere along the way, you stopped being an old friend and became someone whose victories excited me, whose failures frustrated me, whose tears affected me, and whose happiness genuinely mattered to me.
+You stopped being an old friend and became someone whose victories excited me, whose failures frustrated me, whose tears affected me, and whose happiness genuinely mattered to me.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 I've seen you dream.
 I've seen you break.
 I've seen you start over.
 I've seen you doubt yourself.
-I've seen you aim unbelievably high and then convince yourself you're not capable enough.
 </p>
 
 <p>
 And if there is one thing that has consistently frustrated me about you, it is not your failures.
 It's the fact that you still don't see yourself the way I do.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 You have spent years underestimating yourself.
 Years negotiating against your own potential.
@@ -242,12 +283,9 @@ And honestly, it irritates me.
 Not because I think little of you.
 Because I think so much of you.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 There were times I snapped.
 Times I lost patience.
@@ -259,22 +297,14 @@ For those moments, I am genuinely sorry.
 </p>
 
 <p>
-But I also want you to understand where that came from.
-People don't spend hours arguing with people they don't care about.
-My frustration was never born from judgment.
-It came from believing in you and wanting more for you than you were willing to demand from yourself.
+But I also want you to know that my frustration never came from judgment.
+It came from believing in you.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 One of the things I have always admired about you is your willingness to be real.
-Not perfect.
-Not polished.
-Just real.
 </p>
 
 <p>
@@ -282,20 +312,13 @@ Over the years you've shared dreams, fears, insecurities, disappointments, ridic
 </p>
 
 <p>
-And I hope you know that I never saw that openness as a burden.
-I saw it for what it was.
-Trust.
+And I have always considered that trust a privilege.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 You never needed to filter yourself with me.
-You never needed to be the strong version of yourself all the time.
-You never needed to hide uncertainty or fear.
 </p>
 
 <p>
@@ -303,51 +326,42 @@ The ambitious version of you.
 The emotional version of you.
 The confused version of you.
 The brave version of you.
-All of them were welcome.
 </p>
 
 <p>
-You never had to earn the right to be yourself with me.
-You already had it.
+All of them were welcome.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 If there is one thing I want for you moving forward, it is this:
 stop looking at yourself through the eyes of people who cannot fully see your value.
 </p>
 
 <p>
-Build something of your own.
 Build confidence that belongs to you.
+Build happiness that feels genuine.
 Build a life that makes you proud.
-Build happiness that feels genuine when nobody else is watching.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 And as for us...
-I don't really know what label fits our friendship anymore.
+</p>
+
+<p>
+I don't know what label fits our friendship anymore.
 Maybe none of them do.
 </p>
 
 <p>
 I only know that over the years you became one of those rare people whose presence leaves a permanent mark.
 </p>
-
 </div>
 
-
 <div class="section">
-
 <p>
 You've made me laugh.
 You've annoyed me.
@@ -363,15 +377,19 @@ And through all of it you've given me the privilege of knowing the person hidden
 <p>
 The real you.
 </p>
+</div>
+
+<div class="finalPause">
+
+Take a breath.
+
+<br><br>
+
+One last thing.
 
 </div>
 
-
-<div class="section ending">
-
-<p>
-So if there is one thing I want you to remember after reading all of this...
-</p>
+<div class="ending">
 
 <p>
 I am grateful for you.
@@ -393,41 +411,134 @@ And even on the days when you struggle to believe in yourself, I hope you rememb
 Not once.
 </p>
 
-<div class="signature">
-- Your idiot friend
-</div>
+<div class="signature" id="signature"></div>
 
 </div>
 
 <script>
 
-const text = "The Things I Never Said";
-let i = 0;
+// TYPEWRITER TITLE
 
-function typeWriter(){
-    if(i < text.length){
-        document.getElementById("title").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter,90);
-    }
+const titleText = "The Things I Never Said";
+
+let t = 0;
+
+function typeTitle(){
+
+if(t < titleText.length){
+
+document.getElementById("title").innerHTML += titleText.charAt(t);
+
+t++;
+
+setTimeout(typeTitle,90);
+
 }
 
-window.onload = typeWriter;
+}
+
+window.onload = typeTitle;
+
+// PARAGRAPH REVEAL
 
 const sections = document.querySelectorAll('.section');
 
 const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
 },{
-    threshold:0.15
+threshold:0.15
 });
 
 sections.forEach(section=>{
-    observer.observe(section);
+observer.observe(section);
+});
+
+// ENDING REVEAL
+
+const ending = document.querySelector('.ending');
+
+const endingObserver = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+setTimeout(()=>{
+
+ending.classList.add('show');
+
+typeSignature();
+
+},1500);
+
+endingObserver.disconnect();
+
+}
+
+});
+
+},{
+threshold:0.8
+});
+
+endingObserver.observe(ending);
+
+// SIGNATURE TYPEWRITER
+
+function typeSignature(){
+
+const sigText = "- Your friend-Madhu";
+
+let i = 0;
+
+function write(){
+
+if(i < sigText.length){
+
+document.getElementById("signature").innerHTML += sigText.charAt(i);
+
+i++;
+
+setTimeout(write,120);
+
+}
+
+}
+
+write();
+
+}
+
+// MUSIC BUTTON
+
+const music = document.getElementById("bgmusic");
+
+const button = document.getElementById("musicButton");
+
+button.addEventListener("click",()=>{
+
+if(music.paused){
+
+music.play();
+button.innerHTML="❚❚";
+
+}else{
+
+music.pause();
+button.innerHTML="♫";
+
+}
+
 });
 
 </script>
